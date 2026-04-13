@@ -1,0 +1,168 @@
+/* Premium Glassmorphism Dark Mode Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #0f0c29;  /* fallback for old browsers */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-animation {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(138,43,226,0.15) 0%, rgba(0,0,0,0) 50%),
+                radial-gradient(circle, rgba(0,212,255,0.1) 0%, rgba(0,0,0,0) 50%);
+    background-position: 0 0, 100% 100%;
+    background-size: 50% 50%, 50% 50%;
+    animation: moveObj 20s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes moveObj {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 50px); }
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    padding: 40px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.glass-container.dashboard {
+    width: 800px;
+}
+
+h1, h2 {
+    margin-bottom: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+.btn.logout {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+.btn.logout:hover {
+     box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+
+.error-msg {
+    color: #ff416c;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    height: 15px;
+}
+
+/* Dashboard elements */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #00d2ff;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d2ff;
+}
+
+.badge.admin {
+    background: rgba(138, 43, 226, 0.2);
+    color: #d194ff;
+}
